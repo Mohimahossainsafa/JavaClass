@@ -1,0 +1,56 @@
+class University {
+    String universityName;
+    String universityAddress;
+    University(String universityName,String universityAddress) {
+        this.universityName = universityName;
+        this.universityAddress = universityAddress;
+    }
+    void displayUniversity() {
+        System.out.println("University: " + universityName);
+        System.out.println("Address: " + universityAddress);
+    }
+}
+
+class Department {
+    String departmentName;
+    String departmentHeadName;
+    Department(String departmentName,String departmentHeadName) {
+        this.departmentName = departmentName;
+        this.departmentHeadName = departmentHeadName;
+    }
+    void displayDepartment() {
+        System.out.println("Department: " + departmentName);
+        System.out.println("Department Head Name: " + departmentHeadName);
+    }
+}
+
+class Student {
+    String name;
+    int id;
+    String email;
+    University university;
+    Department department;
+    Student(String name, int id,String email, University university, Department department) {
+        this.name = name;
+        this.id = id;
+        this.email = email;
+        this.university = university;
+        this.department = department;
+    }
+    void displayStudent() {
+        System.out.println("Student Name: " + name);
+        System.out.println("Student ID: " + id);
+        System.out.println("Email: " + email);
+        university.displayUniversity();
+        department.displayDepartment();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        University u1 = new University("Daffodil International University","Ashulia,Dhaka");
+        Department d1 = new Department("Computer Science and Engineering","Dr.XYZ");
+        Student s1 = new Student("Safa Mridha",213,"hossain241-15-213@diu.edu.bd", u1, d1);
+        s1.displayStudent();
+    }
+}
